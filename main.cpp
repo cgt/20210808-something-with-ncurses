@@ -16,6 +16,8 @@ struct Position {
 };
 
 class Game {
+	int x = 0;
+	int y = 0;
 	public:
 		void run() {
 			initscr();
@@ -29,8 +31,6 @@ class Game {
 			int max_x = 0;
 			getmaxyx(stdscr, max_y, max_x);
 
-			int x = 0;
-			int y = 0;
 			bool zoom = false;
 			std::vector<Position> trail;
 			while (1) {
