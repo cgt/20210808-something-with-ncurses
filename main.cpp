@@ -9,10 +9,10 @@ static void handleInterrupt(int _) {
 	quit = true;
 }
 
-typedef struct {
+struct Position{
 	int y;
 	int x;
-} Position;
+};
 
 int main(int argc, char **argv) {
 	signal(SIGINT, handleInterrupt);
