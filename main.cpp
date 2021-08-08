@@ -103,8 +103,7 @@ void Game::run() {
 		}
 		mvprintw(current.y, current.x, "o");
 		if (oldx != current.x || oldy != current.y) {
-			Position current_position{current.y, current.x};
-			path.push_back(current_position);
+			path.push_back(current);
 		}
 		refresh();
 		usleep(1000);
