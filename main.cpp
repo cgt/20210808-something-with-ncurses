@@ -17,6 +17,14 @@ struct Position {
 	int x;
 };
 
+bool operator==(const Position& lhs, const Position& rhs) {
+	return lhs.y == rhs.y && lhs.x == rhs.x;
+}
+
+bool operator!=(const Position& lhs, const Position& rhs) {
+	return !(lhs == rhs);
+}
+
 class Game {
 	Position current{1, 1};
 	std::vector<Position> path;
@@ -53,6 +61,7 @@ void Game::run() {
 		int ch = getch();
 		int steps = leap ? 3 : 1;
 
+		auto old = current;
 		auto oldx = current.x;
 		auto oldy = current.y;
 
@@ -102,7 +111,7 @@ void Game::run() {
 			}
 		}
 		mvprintw(current.y, current.x, "o");
-		if (oldx != current.x || oldy != current.y) {
+		if (old != current) {
 			path.push_back(current);
 		}
 		refresh();
