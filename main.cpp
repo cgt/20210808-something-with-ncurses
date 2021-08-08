@@ -20,6 +20,7 @@ struct Position {
 class Game {
 	int x = 1;
 	int y = 1;
+	Position current{1, 1};
 	std::vector<Position> path;
 
 	void setup();
@@ -54,8 +55,8 @@ void Game::run() {
 		int ch = getch();
 		int steps = leap ? 3 : 1;
 
-		auto oldx = x;
-		auto oldy = y;
+		auto oldx = current.x;
+		auto oldy = current.y;
 
 		switch (ch) {
 			case KEY_LEFT:
@@ -102,7 +103,7 @@ void Game::run() {
 				}
 			}
 		}
-		mvprintw(y, x, "o");
+		mvprintw(current.y, current.x, "o");
 		if (oldx != x || oldy != y) {
 			Position current_position{y, x};
 			path.push_back(current_position);
