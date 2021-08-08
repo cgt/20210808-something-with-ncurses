@@ -60,6 +60,9 @@ int main(int argc, char **argv) {
 				trail[next_trail].y = y;
 				trail[next_trail].x = x;
 				next_trail++;
+				if (next_trail > sizeof(trail)/sizeof(trail[0])) {
+					next_trail = 0;
+				}
 				break;
 		}
 		clear();
