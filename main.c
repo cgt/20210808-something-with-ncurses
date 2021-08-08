@@ -32,9 +32,8 @@ int main(int argc, char **argv) {
 	int x = 0;
 	int y = 0;
 	bool zoom = false;
-	int mark_x = 0;
-	int mark_y = 0;
 	Position trail[] = {{0, 0}, {0, 0}};
+	int next_trail = 0;
 	while (1) {
 		if (quit) {
 			break;
@@ -58,8 +57,10 @@ int main(int argc, char **argv) {
 				zoom = !zoom;
 				break;
 			case 'a':
-				mark_x = x;
-				mark_y = y;
+				trail[next_trail].y = y;
+				trail[next_trail].x = x;
+				next_trail++;
+				break;
 		}
 		clear();
 		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
