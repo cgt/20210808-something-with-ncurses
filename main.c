@@ -68,6 +68,7 @@ int main(int argc, char **argv) {
 				break;
 		}
 		clear();
+		border(0, 0, 0, 0, 0, 0, 0, 0);
 		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
 			Position p = trail[i];
 			mvaddch(p.y, p.x, ACS_DIAMOND);
