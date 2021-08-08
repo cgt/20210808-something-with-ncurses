@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 	bool zoom = false;
 	int mark_x = 0;
 	int mark_y = 0;
-	Position *trail[] = {{0, 0}, {0, 0}};
+	Position trail[] = {{0, 0}, {0, 0}};
 	while (1) {
 		if (quit) {
 			break;
