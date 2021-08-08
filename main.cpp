@@ -10,22 +10,22 @@ static void handleInterrupt(int _) {
 	quit = true;
 }
 
-struct Point {
+struct Position {
 	int y;
 	int x;
 };
 
-bool operator==(const Point& lhs, const Point& rhs) {
+bool operator==(const Position& lhs, const Position& rhs) {
 	return lhs.y == rhs.y && lhs.x == rhs.x;
 }
 
-bool operator!=(const Point& lhs, const Point& rhs) {
+bool operator!=(const Position& lhs, const Position& rhs) {
 	return !(lhs == rhs);
 }
 
 class Game {
-	Point current{1, 1};
-	std::vector<Point> path;
+	Position current{1, 1};
+	std::vector<Position> path;
 
 	void setup();
 
