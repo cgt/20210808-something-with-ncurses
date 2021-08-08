@@ -18,15 +18,19 @@ struct Position {
 class Game {
 	int x = 0;
 	int y = 0;
+
+	void setup() {
+		initscr();
+		cbreak();
+		noecho();
+		curs_set(false);
+		nodelay(stdscr, true);
+		keypad(stdscr, true);
+	}
+
 	public:
 		void run() {
-			initscr();
-			cbreak();
-			noecho();
-			curs_set(false);
-			nodelay(stdscr, true);
-			keypad(stdscr, true);
-
+			setup();
 			int max_y = 0;
 			int max_x = 0;
 			getmaxyx(stdscr, max_y, max_x);
