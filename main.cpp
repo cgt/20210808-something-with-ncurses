@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <signal.h>
 #include <vector>
+#include <utility>
 
 static bool quit = false;
 
@@ -40,6 +41,8 @@ void Game::run() {
 	int max_y = 0;
 	int max_x = 0;
 	getmaxyx(stdscr, max_y, max_x);
+
+	std::vector<std::pair<int,int>> path;
 
 	bool zoom = false;
 	while (1) {
