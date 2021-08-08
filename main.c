@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 		refresh();
 		usleep(1000);
 		int ch = getch();
-		int steps = zoom ? 2 : 1;
+		int steps = zoom ? 3 : 1;
 		switch (ch) {
 			case KEY_LEFT:
 				x -= steps;
