@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
 		}
 		clear();
 		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
-			Position p = trail[0];
+			Position p = trail[i];
 			mvaddch(p.y, p.x, 'x');
 		}
 		mvprintw(y, x, "o");
