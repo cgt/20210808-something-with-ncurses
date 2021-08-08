@@ -15,6 +15,9 @@ struct Position {
 	int x;
 };
 
+class Game {
+};
+
 int main(int argc, char **argv) {
 	signal(SIGINT, handleInterrupt);
 
