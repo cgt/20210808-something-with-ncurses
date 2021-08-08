@@ -74,7 +74,7 @@ int main(int argc, char **argv) {
 			mvaddch(p.y, p.x, ACS_DIAMOND);
 		}
 		mvprintw(y, x, "o");
-		refresh();
+		erase();
 		usleep(5000);
 	}
 
