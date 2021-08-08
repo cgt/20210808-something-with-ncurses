@@ -46,13 +46,13 @@ void Game::run() {
 	max_y -= 2;
 	max_x -= 2;
 
-	bool zoom = false;
+	bool leap = false;
 	while (1) {
 		if (quit) {
 			break;
 		}
 		int ch = getch();
-		int steps = zoom ? 3 : 1;
+		int steps = leap ? 3 : 1;
 
 		auto oldx = x;
 		auto oldy = y;
@@ -71,7 +71,7 @@ void Game::run() {
 				y += steps;
 				break;
 			case 'z':
-				zoom = !zoom;
+				leap = !leap;
 				break;
 		}
 		if (x > max_x) {
