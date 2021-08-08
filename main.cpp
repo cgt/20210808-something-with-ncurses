@@ -53,6 +53,9 @@ void Game::run() {
 		int ch = getch();
 		int steps = zoom ? 3 : 1;
 
+		auto oldx = x;
+		auto oldy = y;
+
 		switch (ch) {
 			case KEY_LEFT:
 				x -= steps;
@@ -79,7 +82,9 @@ void Game::run() {
 			}
 		}
 		mvprintw(y, x, "o");
-		path.push_back(std::make_pair(y, x));
+		if (oldx != x || oldy != y) {
+			path.push_back(std::make_pair(y, x));
+		}
 		refresh();
 		usleep(5000);
 	}
