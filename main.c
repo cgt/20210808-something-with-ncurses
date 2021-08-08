@@ -41,11 +41,13 @@ int main(int argc, char **argv) {
 		int ch = getch();
 		int steps = zoom ? 3 : 1;
 
-		trail[next_trail].y = y;
-		trail[next_trail].x = x;
-		next_trail++;
-		if (next_trail > sizeof(trail)/sizeof(trail[0])) {
-			next_trail = 0;
+		if (ch != ERR) {
+			trail[next_trail].y = y;
+			trail[next_trail].x = x;
+			next_trail++;
+			if (next_trail > sizeof(trail)/sizeof(trail[0])) {
+				next_trail = 0;
+			}
 		}
 
 		switch (ch) {
@@ -68,7 +70,6 @@ int main(int argc, char **argv) {
 		clear();
 		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
 			Position p = trail[i];
-			printf("trail %d,%d\n", p.y, p.x);
 			mvaddch(p.y, p.x, 'x');
 		}
 		mvprintw(y, x, "o");
