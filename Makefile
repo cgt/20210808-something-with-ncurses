@@ -1,4 +1,4 @@
 CC=clang
-CFLAGS=-std=gnu11 -Wall -Wextra -Werror -lncurses
+CFLAGS=-std=gnu11 -Wall -lncurses
 
 all: main
