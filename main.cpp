@@ -86,7 +86,7 @@ void Game::run() {
 			path.push_back(std::make_pair(y, x));
 		}
 		refresh();
-		usleep(5000);
+		usleep(1000);
 	}
 
 	endwin();
