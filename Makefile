@@ -1,4 +1,4 @@
-CC=clang
-CFLAGS=-std=gnu11 -Wall -lncurses
+CXX=clang++
+CXXFLAGS=-std=c++17 -Wall -lncurses
 
 all: main
