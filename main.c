@@ -31,11 +31,6 @@ int main(int argc, char **argv) {
 		if (quit) {
 			break;
 		}
-		clear();
-		addch('x');
-		mvprintw(y, x, "o");
-		refresh();
-		usleep(1000);
 		int ch = getch();
 		int steps = zoom ? 3 : 1;
 		switch (ch) {
@@ -55,6 +50,11 @@ int main(int argc, char **argv) {
 				zoom = !zoom;
 				break;
 		}
+		clear();
+		addch('x');
+		mvprintw(y, x, "o");
+		refresh();
+		usleep(1000);
 	}
 
 	endwin();
