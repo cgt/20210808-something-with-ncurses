@@ -18,8 +18,6 @@ struct Position {
 };
 
 class Game {
-	int x = 1;
-	int y = 1;
 	Position current{1, 1};
 	std::vector<Position> path;
 
