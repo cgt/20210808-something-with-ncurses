@@ -60,32 +60,32 @@ void Game::run() {
 
 		switch (ch) {
 			case KEY_LEFT:
-				x -= steps;
+				current.x -= steps;
 				break;
 			case KEY_RIGHT:
-				x += steps;
+				current.x += steps;
 				break;
 			case KEY_UP:
-				y -= steps;
+				current.y -= steps;
 				break;
 			case KEY_DOWN:
-				y += steps;
+				current.y += steps;
 				break;
 			case 'z':
 				leap = !leap;
 				break;
 		}
-		if (x > max_x) {
-			x = max_x;
+		if (current.x > max_x) {
+			current.x = max_x;
 		}
-		if (x < 1) {
-			x = 1;
+		if (current.x < 1) {
+			current.x = 1;
 		}
-		if (y > max_y) {
-			y = max_y;
+		if (current.y > max_y) {
+			current.y = max_y;
 		}
-		if (y < 1) {
-			y = 1;
+		if (current.y < 1) {
+			current.y = 1;
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
@@ -104,8 +104,8 @@ void Game::run() {
 			}
 		}
 		mvprintw(current.y, current.x, "o");
-		if (oldx != x || oldy != y) {
-			Position current_position{y, x};
+		if (oldx != current.x || oldy != current.y) {
+			Position current_position{current.y, current.x};
 			path.push_back(current_position);
 		}
 		refresh();
