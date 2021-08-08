@@ -73,10 +73,10 @@ void Game::run() {
 				break;
 		}
 		if (x > max_x) {
-			x = max_x;
+			x = max_x-1;
 		}
 		if (y > max_y) {
-			y = max_y;
+			y = max_y-1;
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
