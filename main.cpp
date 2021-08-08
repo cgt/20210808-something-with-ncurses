@@ -74,7 +74,7 @@ void Game::run() {
 
 		switch (ch) {
 			case KEY_LEFT:
-				current.x -= steps;
+				goLeft();
 				break;
 			case KEY_RIGHT:
 				current.x += steps;
@@ -88,12 +88,6 @@ void Game::run() {
 			case 'z':
 				leap = !leap;
 				break;
-		}
-		if (current.x > max_x) {
-			current.x = max_x;
-		}
-		if (current.x < 1) {
-			current.x = 1;
 		}
 		if (current.y > max_y) {
 			current.y = max_y;
