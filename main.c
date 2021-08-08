@@ -40,12 +40,14 @@ int main(int argc, char **argv) {
 		}
 		int ch = getch();
 		int steps = zoom ? 3 : 1;
+
 		trail[next_trail].y = y;
 		trail[next_trail].x = x;
 		next_trail++;
 		if (next_trail > sizeof(trail)/sizeof(trail[0])) {
 			next_trail = 0;
 		}
+
 		switch (ch) {
 			case KEY_LEFT:
 				x -= steps;
