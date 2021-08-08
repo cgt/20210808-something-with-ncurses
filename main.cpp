@@ -43,6 +43,8 @@ void Game::run() {
 	int max_y = 0;
 	int max_x = 0;
 	getmaxyx(stdscr, max_y, max_x);
+	max_y -= 1;
+	max_x -= 1;
 
 	bool zoom = false;
 	while (1) {
