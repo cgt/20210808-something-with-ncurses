@@ -20,7 +20,7 @@ struct Position {
 class Game {
 	int x = 1;
 	int y = 1;
-	std::vector<std::pair<int,int>> path;
+	std::vector<Position> path;
 
 	void setup();
 
@@ -79,7 +79,7 @@ void Game::run() {
 			for (int xx = 10; xx < 20; xx++) {
 				auto trampled = false;
 				for (auto position : path) {
-					if (position.first == yy && position.second == xx) {
+					if (position.y == yy && position.x == xx) {
 						trampled = true;
 					}
 				}
@@ -90,7 +90,8 @@ void Game::run() {
 		}
 		mvprintw(y, x, "o");
 		if (oldx != x || oldy != y) {
-			path.push_back(std::make_pair(y, x));
+			Position current_position{y, x};
+			path.push_back(current_position);
 		}
 		refresh();
 		usleep(1000);
@@ -99,7 +100,7 @@ void Game::run() {
 	endwin();
 
 	for (auto position : path) {
-		std::cout << "x=" << position.second << " y=" << position.first << '\n';
+		std::cout << "x=" << position.x << " y=" << position.y << '\n';
 	}
 }
 
