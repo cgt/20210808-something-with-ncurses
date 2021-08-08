@@ -72,6 +72,12 @@ void Game::run() {
 				zoom = !zoom;
 				break;
 		}
+		if (x > max_x) {
+			x = max_x;
+		}
+		if (y > max_y) {
+			y = max_y;
+		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
 
