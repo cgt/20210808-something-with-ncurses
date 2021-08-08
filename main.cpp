@@ -78,6 +78,7 @@ void Game::run() {
 			}
 		}
 		mvprintw(y, x, "o");
+		path.push_back(std::make_pair(y, x));
 		refresh();
 		usleep(5000);
 	}
