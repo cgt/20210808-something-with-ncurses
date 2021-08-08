@@ -9,7 +9,7 @@ static void handleInterrupt(int _) {
 	quit = true;
 }
 
-struct Position{
+struct Position {
 	int y;
 	int x;
 };
