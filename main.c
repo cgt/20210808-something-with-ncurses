@@ -27,6 +27,8 @@ int main(int argc, char **argv) {
 	int x = 0;
 	int y = 0;
 	bool zoom = false;
+	int mark_x = 0;
+	int mark_y = 0;
 	while (1) {
 		if (quit) {
 			break;
