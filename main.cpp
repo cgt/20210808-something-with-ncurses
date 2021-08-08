@@ -32,8 +32,6 @@ int main(int argc, char **argv) {
 	int x = 0;
 	int y = 0;
 	bool zoom = false;
-	Position trail[10] = {{0, 0}};
-	int next_trail = 0;
 	std::vector<Position> trail2;
 	while (1) {
 		if (quit) {
@@ -43,12 +41,6 @@ int main(int argc, char **argv) {
 		int steps = zoom ? 3 : 1;
 
 		if (ch != ERR) {
-			trail[next_trail].y = y;
-			trail[next_trail].x = x;
-			next_trail++;
-			if (next_trail > sizeof(trail)/sizeof(trail[0])) {
-				next_trail = 0;
-			}
 			Position p{y, x};
 			trail2.push_back(p);
 		}
