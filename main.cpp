@@ -43,6 +43,9 @@ int main(int argc, char **argv) {
 		if (ch != ERR) {
 			Position p{y, x};
 			trail2.push_back(p);
+			if (trail2.size() > 10) {
+				trail2.erase(trail2.begin());
+			}
 		}
 
 		switch (ch) {
