@@ -10,6 +10,11 @@ static void handleInterrupt(int _) {
 	quit = true;
 }
 
+typedef struct {
+	int y;
+	int x;
+} Position;
+
 int main(int argc, char **argv) {
 	signal(SIGINT, handleInterrupt);
 
@@ -29,6 +34,7 @@ int main(int argc, char **argv) {
 	bool zoom = false;
 	int mark_x = 0;
 	int mark_y = 0;
+	Position *trail[] = {{0, 0}, {0, 0}};
 	while (1) {
 		if (quit) {
 			break;
