@@ -32,6 +32,7 @@ int main(int argc, char **argv) {
 			break;
 		}
 		clear();
+		addch('x');
 		mvprintw(y, x, "o");
 		refresh();
 		usleep(1000);
