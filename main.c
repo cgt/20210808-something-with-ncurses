@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 	int x = 0;
 	int y = 0;
 	bool zoom = false;
-	Position trail[] = {{0, 0}, {0, 0}};
+	Position trail[] = {{0, 0}};
 	int next_trail = 0;
 	while (1) {
 		if (quit) {
