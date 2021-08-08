@@ -42,21 +42,12 @@ void Game::run() {
 	getmaxyx(stdscr, max_y, max_x);
 
 	bool zoom = false;
-	std::vector<Position> trail;
 	while (1) {
 		if (quit) {
 			break;
 		}
 		int ch = getch();
 		int steps = zoom ? 3 : 1;
-
-		if (ch != ERR) {
-			Position p{y, x};
-			trail.push_back(p);
-			if (trail.size() > 10) {
-				trail.erase(trail.begin());
-			}
-		}
 
 		switch (ch) {
 			case KEY_LEFT:
@@ -77,9 +68,6 @@ void Game::run() {
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
-		for (auto p : trail) {
-			mvaddch(p.y, p.x, ACS_DIAMOND);
-		}
 		mvprintw(y, x, "o");
 		refresh();
 		usleep(5000);
