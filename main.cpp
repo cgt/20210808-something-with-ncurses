@@ -24,10 +24,13 @@ bool operator!=(const Position& lhs, const Position& rhs) {
 }
 
 class Game {
+	int max_y = 0;
+	int max_x = 0;
 	Position current{1, 1};
 	std::vector<Position> path;
 
 	void setup();
+	void goLeft();
 
 	public:
 	void run();
@@ -42,11 +45,19 @@ void Game::setup() {
 	keypad(stdscr, true);
 }
 
+void Game::goLeft() {
+	auto x = current.x-1;
+	if (x > max_x) {
+		x = max_x;
+	} else if (x < 1) {
+		x = 1;
+	}
+	current.x = x;
+}
+
 
 void Game::run() {
 	setup();
-	int max_y = 0;
-	int max_x = 0;
 	getmaxyx(stdscr, max_y, max_x);
 	max_y -= 2;
 	max_x -= 2;
