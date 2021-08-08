@@ -51,6 +51,9 @@ int main(int argc, char **argv) {
 			case 'z':
 				zoom = !zoom;
 				break;
+			case 'a':
+				mark_x = x;
+				mark_y = y;
 		}
 		clear();
 		addch('x');
