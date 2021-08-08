@@ -57,6 +57,7 @@ int main(int argc, char **argv) {
 		}
 		clear();
 		addch('x');
+		mvaddch(mark_y, mark_x, 'x');
 		mvprintw(y, x, "o");
 		refresh();
 		usleep(1000);
