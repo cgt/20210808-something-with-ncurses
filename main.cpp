@@ -4,6 +4,7 @@
 #include <signal.h>
 #include <vector>
 #include <utility>
+#include <iostream>
 
 static bool quit = false;
 
@@ -84,6 +85,10 @@ void Game::run() {
 	}
 
 	endwin();
+
+	for (auto position : path) {
+		std::cout << "x=" << position.second << " y=" << position.first << '\n';
+	}
 }
 
 int main(int argc, char **argv) {
