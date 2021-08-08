@@ -1,9 +1,7 @@
 #include <ncurses.h>
 #include <unistd.h>
-#include <stdio.h>
 #include <signal.h>
 #include <vector>
-#include <utility>
 #include <iostream>
 
 static bool quit = false;
