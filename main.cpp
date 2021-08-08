@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <signal.h>
+#include <vector>
 
 static bool quit = false;
 
@@ -33,6 +34,7 @@ int main(int argc, char **argv) {
 	bool zoom = false;
 	Position trail[10] = {{0, 0}};
 	int next_trail = 0;
+	std::vector<Position> trail2;
 	while (1) {
 		if (quit) {
 			break;
@@ -47,6 +49,8 @@ int main(int argc, char **argv) {
 			if (next_trail > sizeof(trail)/sizeof(trail[0])) {
 				next_trail = 0;
 			}
+			Position p{y, x};
+			trail2.push_back(p);
 		}
 
 		switch (ch) {
@@ -68,8 +72,7 @@ int main(int argc, char **argv) {
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
-		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
-			Position p = trail[i];
+		for (auto p : trail2) {
 			mvaddch(p.y, p.x, ACS_DIAMOND);
 		}
 		mvprintw(y, x, "o");
