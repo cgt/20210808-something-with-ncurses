@@ -6,7 +6,7 @@
 
 static bool quit = false;
 
-void handleInterrupt(int _) {
+static void handleInterrupt(int _) {
 	quit = true;
 }
 
