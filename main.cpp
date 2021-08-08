@@ -31,6 +31,7 @@ class Game {
 
 	void setup();
 	void goLeft();
+	void goRight();
 
 	public:
 	void run();
@@ -47,6 +48,16 @@ void Game::setup() {
 
 void Game::goLeft() {
 	auto x = current.x-1;
+	if (x > max_x) {
+		x = max_x;
+	} else if (x < 1) {
+		x = 1;
+	}
+	current.x = x;
+}
+
+void Game::goRight() {
+	auto x = current.x+1;
 	if (x > max_x) {
 		x = max_x;
 	} else if (x < 1) {
@@ -77,7 +88,7 @@ void Game::run() {
 				goLeft();
 				break;
 			case KEY_RIGHT:
-				current.x += steps;
+				goRight();
 				break;
 			case KEY_UP:
 				current.y -= steps;
@@ -88,12 +99,6 @@ void Game::run() {
 			case 'z':
 				leap = !leap;
 				break;
-		}
-		if (current.y > max_y) {
-			current.y = max_y;
-		}
-		if (current.y < 1) {
-			current.y = 1;
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
