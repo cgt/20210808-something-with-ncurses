@@ -77,7 +77,15 @@ void Game::run() {
 
 		for (int yy = 10; yy < 20; yy++) {
 			for (int xx = 10; xx < 20; xx++) {
-				mvaddch(yy, xx, ACS_BLOCK);
+				auto trampled = false;
+				for (auto position : path) {
+					if (position.first == yy && position.second == xx) {
+						trampled = true;
+					}
+				}
+				if (!trampled) {
+					mvaddch(yy, xx, ACS_BLOCK);
+				}
 			}
 		}
 		mvprintw(y, x, "o");
