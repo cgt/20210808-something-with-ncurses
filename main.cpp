@@ -68,6 +68,12 @@ void Game::run() {
 		}
 		erase();
 		border(0, 0, 0, 0, 0, 0, 0, 0);
+
+		for (int yy = 10; yy < 20; yy++) {
+			for (int xx = 10; xx < 20; xx++) {
+				mvaddch(yy, xx, ACS_BLOCK);
+			}
+		}
 		mvprintw(y, x, "o");
 		refresh();
 		usleep(5000);
