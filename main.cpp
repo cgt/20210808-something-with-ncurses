@@ -32,7 +32,7 @@ class Game {
 			int x = 0;
 			int y = 0;
 			bool zoom = false;
-			std::vector<Position> trail2;
+			std::vector<Position> trail;
 			while (1) {
 				if (quit) {
 					break;
@@ -42,9 +42,9 @@ class Game {
 
 				if (ch != ERR) {
 					Position p{y, x};
-					trail2.push_back(p);
-					if (trail2.size() > 10) {
-						trail2.erase(trail2.begin());
+					trail.push_back(p);
+					if (trail.size() > 10) {
+						trail.erase(trail.begin());
 					}
 				}
 
@@ -67,7 +67,7 @@ class Game {
 				}
 				erase();
 				border(0, 0, 0, 0, 0, 0, 0, 0);
-				for (auto p : trail2) {
+				for (auto p : trail) {
 					mvaddch(p.y, p.x, ACS_DIAMOND);
 				}
 				mvprintw(y, x, "o");
