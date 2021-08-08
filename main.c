@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 		clear();
 		for (int i = 0; i < sizeof(trail)/sizeof(trail[0]); i++) {
 			Position p = trail[i];
-			mvaddch(p.y, p.x, ACS_BLOCK);
+			mvaddch(p.y, p.x, ACS_DIAMOND);
 		}
 		mvprintw(y, x, "o");
 		refresh();
