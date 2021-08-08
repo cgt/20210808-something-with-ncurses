@@ -2,8 +2,17 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <signal.h>
+
+static bool quit = false;
+
+void handleInterrupt(int _) {
+	quit = true;
+}
 
 int main(int argc, char **argv) {
+	signal(SIGINT, handleInterrupt);
+
 	initscr();
 	cbreak();
 	noecho();
@@ -19,6 +28,9 @@ int main(int argc, char **argv) {
 	int y = 0;
 	bool zoom = false;
 	while (1) {
+		if (quit) {
+			break;
+		}
 		clear();
 		mvprintw(y, x, "o");
 		refresh();
