@@ -20,6 +20,7 @@ struct Position {
 class Game {
 	int x = 1;
 	int y = 1;
+	std::vector<std::pair<int,int>> path;
 
 	void setup();
 
@@ -42,8 +43,6 @@ void Game::run() {
 	int max_y = 0;
 	int max_x = 0;
 	getmaxyx(stdscr, max_y, max_x);
-
-	std::vector<std::pair<int,int>> path;
 
 	bool zoom = false;
 	while (1) {
