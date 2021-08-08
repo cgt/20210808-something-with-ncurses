@@ -62,8 +62,6 @@ void Game::run() {
 		int steps = leap ? 3 : 1;
 
 		auto old = current;
-		auto oldx = current.x;
-		auto oldy = current.y;
 
 		switch (ch) {
 			case KEY_LEFT:
