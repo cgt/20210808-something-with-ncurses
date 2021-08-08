@@ -75,7 +75,7 @@ int main(int argc, char **argv) {
 		}
 		mvprintw(y, x, "o");
 		refresh();
-		usleep(1000);
+		usleep(5000);
 	}
 
 	endwin();
